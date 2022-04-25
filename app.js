@@ -1,4 +1,5 @@
-const express = require ('express')
+const express = require ('express');
+const res = require('express/lib/response');
 
 const app = express ()
 const port = process.env.port
@@ -10,8 +11,10 @@ app.set ('view engine', 'ejs')
 const homeRouter = require('./routes/homeRouter');
 //Ruteo
 app.use('/', homeRouter);
-//app.use('/',userRouter);
-//app.use('/products',productRouter);
+
+// app.get('/', req, res) => {
+//     res.send ('llegamos al home')
+// }
 
 app.listen(port || 3000, () => {
     console.log('Example app listerning on port');
