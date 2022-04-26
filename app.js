@@ -9,12 +9,8 @@ app.use(express.static('public'));
 app.set ('view engine', 'ejs')
 
 const homeRouter = require('./routes/homeRouter');
-//Ruteo
 app.use('/', homeRouter);
 
-// app.get('/', req, res) => {
-//     res.send ('llegamos al home')
-// }
 
 app.listen(port || 3000, () => {
     console.log('Example app listerning on port');
